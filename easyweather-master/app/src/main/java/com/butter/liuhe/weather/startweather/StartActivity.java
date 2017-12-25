@@ -60,7 +60,7 @@ public class StartActivity extends AppCompatActivity {
                 startActivity(new Intent(StartActivity.this, MainActivity.class));
                 finish();
             }
-        },3500);
+        }, 3500);
     }
 
     public int getLayoutId() {
@@ -70,7 +70,7 @@ public class StartActivity extends AppCompatActivity {
     public void startService() {
         startAddCityService();
         startGetWeatherService();
-        startNotificationService();
+//        startNotificationService();
         startFileProcessService();
     }
 
@@ -112,7 +112,6 @@ public class StartActivity extends AppCompatActivity {
     }
 
 
-
     public static String getActionFileProcess() {
         return ACTION_FILE_PROCESS;
     }
@@ -120,7 +119,7 @@ public class StartActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK){
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             return true;
         }
         return super.onKeyDown(keyCode, event);

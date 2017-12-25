@@ -63,6 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15dp"
-            tools:text = "运动情况：较适宜" />
+            tools:text = "
+            运动情况：较适宜" />
     </LinearLayout>
 </LinearLayout>

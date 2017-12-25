@@ -11,6 +11,10 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+        ndk{
+            abiFilters "armeabi"
+        }
     }
     buildTypes {
         release {
@@ -23,7 +27,7 @@ android {
         abortOnError false
     }
 
-    dexOptions{
+    dexOptions {
         javaMaxHeapSize "4g"
     }
 }
@@ -54,6 +58,8 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     compile project(':betterload')
+    compile files('libs/zxing.jar')
+    compile files('libs/jpush-android-2.1.8.jar')
 }
 
 greendao {
