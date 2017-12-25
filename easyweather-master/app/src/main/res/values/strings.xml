@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">简易天气</string>
+    <string name="app_name">六合一彩云天气</string>
 
 
     <!--menu菜单中的文字-->
     <string name="location">定位</string>
-    <string name="feedback">期待反馈</string>
-    <string name="like">喜欢</string>
+    <string name="feedback">""</string>
+    <string name="like">""</string>
 
 
     <!--侧边栏list中的文字-->
@@ -49,8 +49,8 @@
 
 
     <!--关于信息-->
-    <string name="byhieg">作者：byhieg</string>
-    <string name="skywy">作者：skyWY</string>
+    <string name="byhieg">作者：</string>
+    <string name="skywy">作者：</string>
     <string name="open_source_licenses">Open Source Licenses</string>
     <string name="gson">gson</string>
     <string name="greendao">greenDao</string>

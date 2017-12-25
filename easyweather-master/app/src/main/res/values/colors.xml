@@ -5,7 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
 
-    <color name="maincolor">#2e8b57</color> <!--主色调-->
+    <color name="maincolor">#FF4081</color> <!--主色调-->
     <color name="secondcolor">#2e8159</color>
     <color name="loadColor">#EFEBEF</color>
     <color name="sunny">#E5644C</color>

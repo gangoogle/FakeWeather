@@ -141,7 +141,7 @@ public class MainActivity extends BaseActivity implements ActivityCompat
                             public void onClick(DialogInterface dialog, int which) {
 
                             }
-                        }).show();
+                        });
                         break;
 
                     case R.id.location:
@@ -171,8 +171,9 @@ public class MainActivity extends BaseActivity implements ActivityCompat
                         break;
 
                     case R.id.like:
-                        startActivity(LoveAppActivity.class);
-                        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+
+//                        startActivity(LoveAppActivity.class);
+//                        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
                         break;
                     case R.id.add_city:
                         startActivity(CityManageActivity.class);

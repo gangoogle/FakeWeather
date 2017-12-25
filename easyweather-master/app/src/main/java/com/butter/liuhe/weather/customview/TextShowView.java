@@ -22,10 +22,10 @@ public class TextShowView extends View {
     private PorterDuffXfermode mXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
     private Bitmap backBitmap;
 
-    private int mCurW, mCurH, mCurTop,mCurBelow;
-    private Rect topRect,belowRect;
-    private Paint mPaint,bPaint;
-    private int height,width;
+    private int mCurW, mCurH, mCurTop, mCurBelow;
+    private Rect topRect, belowRect;
+    private Paint mPaint, bPaint;
+    private int height, width;
 
     public TextShowView(Context context) {
         super(context);
@@ -52,11 +52,11 @@ public class TextShowView extends View {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setFilterBitmap(true);
         mPaint.setDither(true);
-        mPaint.setColor(ContextCompat.getColor(MyApplication.getAppContext(),R.color.maincolor));
-        String familyName ="宋体";
-        Typeface font = Typeface.create(familyName,Typeface.BOLD);
+        mPaint.setColor(ContextCompat.getColor(MyApplication.getAppContext(), R.color.maincolor));
+        String familyName = "宋体";
+        Typeface font = Typeface.create(familyName, Typeface.BOLD);
         mPaint.setTypeface(font);
-        mPaint.setTextSize(DisplayUtil.sp2px(MyApplication.getAppContext(),50));
+        mPaint.setTextSize(DisplayUtil.sp2px(MyApplication.getAppContext(), 50));
         mPaint.setTextAlign(Paint.Align.CENTER);
 
         //背部图片的初始化
@@ -66,23 +66,23 @@ public class TextShowView extends View {
         bPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         bPaint.setFilterBitmap(true);
         bPaint.setDither(true);
-        bPaint.setColor(ContextCompat.getColor(MyApplication.getAppContext(),R.color.white));
+        bPaint.setColor(ContextCompat.getColor(MyApplication.getAppContext(), R.color.white));
 
         //设置当前的高度
-        mCurTop = mBitH / 2 ;
+        mCurTop = mBitH / 2;
         mCurBelow = mCurTop;
 
         int topRectH = mCurTop;
         int belowRectH = mCurBelow;
         topRect = new Rect(0,
-                           topRectH,
-                           mBitW,
-                           topRectH);  //初始化原图
+                topRectH,
+                mBitW,
+                topRectH);  //初始化原图
 
         belowRect = new Rect(0,
-                             belowRectH ,
-                             mBitW,
-                             belowRectH);
+                belowRectH,
+                mBitW,
+                belowRectH);
     }
 
 
@@ -93,7 +93,7 @@ public class TextShowView extends View {
         canvas.drawBitmap(backBitmap, 0, 0, bPaint);// 绘制目标图
         bPaint.setXfermode(mXfermode);    //设置混排模式
         canvas.drawRect(topRect, bPaint);   //绘制源图
-        canvas.drawRect(belowRect,bPaint);
+        canvas.drawRect(belowRect, bPaint);
         bPaint.setXfermode(null);         //清除混排模式
         canvas.restoreToCount(saveLayerCount);    //恢复保存的图层
 
@@ -107,25 +107,25 @@ public class TextShowView extends View {
         }
     }
 
-    private Bitmap getDescBitmap(){
+    private Bitmap getDescBitmap() {
 
-        int l = (width - 7 * DisplayUtil.sp2px(MyApplication.getAppContext(),50)) / 2;
+        int l = (width - 7 * DisplayUtil.sp2px(MyApplication.getAppContext(), 50)) / 2;
         Bitmap descBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
         Canvas canvasTemp = new Canvas(descBitmap);
-        int [] easyPosition = {width / 2 , height / 2 - getPx(8.0)};
-        int [] weatherPosition = {width / 2 ,  height / 2 + getPx(42.0)};
+        int[] easyPosition = {width / 2, height / 2 - getPx(8.0)};
+        int[] weatherPosition = {width / 2, height / 2 + getPx(42.0)};
 //        int [] easyPosition = {l, height / 2 - getPx(8.0)};
 //        int [] weatherPosition = {l,  height / 2 + getPx(42.0)};
-        canvasTemp.drawText("Eaaaasy",easyPosition[0],easyPosition[1],mPaint);
-        canvasTemp.drawText("Weather",weatherPosition[0],weatherPosition[1],mPaint);
+        canvasTemp.drawText("lcaiyun", easyPosition[0], easyPosition[1], mPaint);
+        canvasTemp.drawText("Weather", weatherPosition[0], weatherPosition[1], mPaint);
         return descBitmap;
     }
 
-    private int getPx(int dp){
-         return DisplayUtil.dip2px(MyApplication.getAppContext(),dp);
+    private int getPx(int dp) {
+        return DisplayUtil.dip2px(MyApplication.getAppContext(), dp);
     }
 
-    private int getPx(double sp){
+    private int getPx(double sp) {
         return DisplayUtil.sp2px(MyApplication.getAppContext(), (float) sp);
     }
 }

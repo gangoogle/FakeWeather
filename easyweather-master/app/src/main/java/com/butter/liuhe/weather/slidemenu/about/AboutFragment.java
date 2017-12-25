@@ -38,18 +38,18 @@ public class AboutFragment extends BaseFragment {
         }
 
         View view = inflater.inflate(R.layout.fragment_about, container, false);
-        TextView tv = (TextView) view.findViewById(R.id.link);
-        String textStr = "https://github.com/byhieg/easyweather";
-        tv.setAutoLinkMask(Linkify.WEB_URLS);
-        tv.setText(textStr);
-        Spannable s = (Spannable) tv.getText();
-        s.setSpan(new UnderlineSpan() {
-            @Override
-            public void updateDrawState(TextPaint ds) {
-                ds.setColor(ds.linkColor);
-                ds.setUnderlineText(false);
-            }
-        }, 0, textStr.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        TextView tv = (TextView) view.findViewById(R.id.link);
+//        String textStr = "https://github.com/byhieg/easyweather";
+//        tv.setAutoLinkMask(Linkify.WEB_URLS);
+//        tv.setText(textStr);
+//        Spannable s = (Spannable) tv.getText();
+//        s.setSpan(new UnderlineSpan() {
+//            @Override
+//            public void updateDrawState(TextPaint ds) {
+//                ds.setColor(ds.linkColor);
+//                ds.setUnderlineText(false);
+//            }
+//        }, 0, textStr.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return view;
     }
 
